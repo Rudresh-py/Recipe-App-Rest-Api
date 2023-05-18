@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-d)yboxht+7%eycwc42%eb!@42i(o22@^c!ycy-6-b-#-ftqz$b
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '0.0.0.0'
+    '0.0.0.0', 'localhost'
 ]
 
 # Application definition
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'drf_spectacular',
     'user',
-    'recipe'
+    'recipe',
 ]
 
 MIDDLEWARE = [
@@ -131,4 +131,8 @@ AUTH_USER_MODEL = 'core.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
+}
+
+SPECTACULAR_SETTINGS = {
+    'COMPONENT_SPLIT_REQUEST': True,
 }
